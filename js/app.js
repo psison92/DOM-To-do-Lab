@@ -7,6 +7,8 @@ buttonEl.addEventListener('click', addTodo)
 function addTodo() {
     const newTodo = document.createElement('li')
     newTodo.textContent = inputEl.value
-    document.querySelector('ul').appendChild(newTodo)
-    inputEl.value = ''
+    while (inputEl.value !== '') {
+        document.querySelector('ul').appendChild(newTodo)
+        inputEl.value = ''
+    }
 }
