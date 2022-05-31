@@ -1,14 +1,20 @@
 const inputEl = document.getElementById('todo-input')
-const buttonEl = document.getElementById('submit-button')
+const addTodoBtn = document.getElementById('submit-button')
 const todoList = document.getElementById('todo-list')
+const resetBtn = document.getElementById('reset-button')
 
-buttonEl.addEventListener('click', addTodo)
+addTodoBtn.addEventListener('click', addTodo)
+resetBtn.addEventListener('click', reset)
 
 function addTodo() {
     const newTodo = document.createElement('li')
     newTodo.textContent = inputEl.value
     while (inputEl.value !== '') {
-        document.querySelector('ul').appendChild(newTodo)
+        todoList.appendChild(newTodo)
         inputEl.value = ''
     }
+}
+
+function reset() {
+    todoList.remove()
 }
